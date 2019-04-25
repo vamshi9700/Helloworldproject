@@ -3,3 +3,8 @@ http://13.59.171.93:8080/
 
 cat catalina.out | tail -5
 
+25-Apr-2019 10:14:48.141 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/gameoflife/tomcat8/webapps/manager]
+25-Apr-2019 10:14:48.180 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/gameoflife/tomcat8/webapps/manager] has finished in [39] ms
+25-Apr-2019 10:14:48.183 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Apr-2019 10:14:48.216 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+25-Apr-2019 10:14:48.235 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1251 ms
