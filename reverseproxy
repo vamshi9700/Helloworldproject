@@ -1,0 +1,21 @@
+https://stackoverflow.com/questions/41251218/apache-reverse-proxy-to-iis
+1)	Here’s how to enable IIS on your Windows 10 laptop:  https://www.betterhostreview.com/turn-on-iis-windows-10.html
+2)	Download Apache web server for Windows from here:  https://www.apachehaus.com/cgi-bin/download.plx
+
+.
+Setting up a mod_proxy is usually straight forward. You need to import mod_proxy in your apache httpd.config file. And then also add something similar to this:
+<VirtualHost *:80>
+    SeverName example.com
+    ProxyRequests Off
+    ProxyPreserveHost On
+    ProxyPass /extDirectory/ http://internalserver/internalDirectory/
+
+    <Location /extDirectory/ >
+        ProxyPassReverse http://internalserver/internalDirectory/
+        Order allow,deny
+        Allow from all
+    </Location>
+
+</VirtualHost>
+
+And on IIS side something like this needs to be configured: https://blogs.msdn.microsoft.com/friis/2016/08/25/setup-iis-with-url-rewrite-as-a-reverse-proxy-for-real-world-apps/
