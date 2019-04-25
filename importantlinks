@@ -1,2 +1,64 @@
 https://www.mkyong.com/maven/how-to-deploy-maven-based-war-file-to-tomcat/
 http://13.59.171.93:8080/
+login as: ec2-user
+ec2-user@13.59.171.93's password:
+Last failed login: Tue Apr 23 20:10:20 UTC 2019 from 201-26-105-123.dsl.telesp.net.br on ssh:notty
+There was 1 failed login attempt since the last successful login.
+Last login: Mon Apr 22 15:47:25 2019 from 124.123.69.154
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+8 package(s) needed for security, out of 13 available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-172-31-30-25 ~]$ clear
+[ec2-user@ip-172-31-30-25 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-30-25 ~]$ cd ..
+[ec2-user@ip-172-31-30-25 home]$ ls
+ec2-user  gameoflife
+[ec2-user@ip-172-31-30-25 home]$ su -gameoflife
+su: group ameoflife does not exist
+[ec2-user@ip-172-31-30-25 home]$ ls
+ec2-user  gameoflife
+[ec2-user@ip-172-31-30-25 home]$ su - gameoflife
+Password:
+Last login: Mon Apr 22 15:49:54 UTC 2019 on pts/0
+[gameoflife@ip-172-31-30-25 ~]$ ls
+apache-tomcat-8.5.40.tar.gz  index.html  tomcat8
+[gameoflife@ip-172-31-30-25 ~]$ cd tomcat8
+[gameoflife@ip-172-31-30-25 tomcat8]$ ls
+bin           CONTRIBUTING.md  logs       RELEASE-NOTES  webapps
+BUILDING.txt  lib              NOTICE     RUNNING.txt    work
+conf          LICENSE          README.md  temp
+[gameoflife@ip-172-31-30-25 tomcat8]$ cd conf
+[gameoflife@ip-172-31-30-25 conf]$ ls
+Catalina             context.xml           logging.properties  tomcat-users.xsd
+catalina.policy      jaspic-providers.xml  server.xml          web.xml
+catalina.properties  jaspic-providers.xsd  tomcat-users.xml
+[gameoflife@ip-172-31-30-25 conf]$ vi tomcat-users.xml
+  NOTE:  By default, no user is included in the "manager-gui" role required
+  to operate the "/manager/html" web application.  If you wish to use this app,
+  you must define such a user - the username and password are arbitrary. It is
+  strongly recommended that you do NOT use one of the users in the commented out
+  section below since they are intended for use with the examples web
+  application.
+-->
+<!--
+  NOTE:  The sample user and role entries below are intended for use with the
+  examples web application. They are wrapped in a comment and thus are ignored
+  when reading this file. If you wish to configure these users for use with the
+  examples web application, do not forget to remove the <!.. ..> that surrounds
+  them. You will also need to set the passwords to something appropriate.
+-->
+  <role rolename="manager-script"/>
+  <role rolename="manager-gui"/>
+   <role rolename="manager-status"/>
+ <role rolename="manager-jmx"/>
+
+  <user username="admin" password="password" roles="manager-gui,manager-script" />
+</tomcat-users>
+~
+-- INSERT --  
