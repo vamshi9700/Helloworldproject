@@ -6,3 +6,11 @@ http://13.59.171.93:8080/
 
 
   <user username="admin" password="password" roles="manager-gui,manager-script" </tomcat-users>
+<tomcat-users>
+  <role rolename="manager-script"/>
+  <role rolename="manager-gui"/>
+
+
+  <user username="admin" password="password" roles="manager-gui,manager-script"/>
+ </tomcat-users>
+
