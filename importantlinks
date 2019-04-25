@@ -8,3 +8,10 @@ cat catalina.out | tail -5
 25-Apr-2019 10:14:48.183 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
 25-Apr-2019 10:14:48.216 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
 25-Apr-2019 10:14:48.235 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1251 ms
+
+<tomcat-users>
+  <role rolename="manager-script"/>
+  <role rolename="manager-gui"/>
+
+
+  <user username="Priyanka" password="Password1" roles="manager-gui,manager-script"/>
